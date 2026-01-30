@@ -1,16 +1,33 @@
-# gamecodex
 
-A new Flutter project.
+#Tr Türkçe Versiyon
 
-## Getting Started
+## Telif Hakkı ve Görseller
 
-This project is a starting point for a Flutter application.
+Bu GitHub repository’si herhangi bir telifli oyun görseli içermez.
 
-A few resources to get you started if this is your first Flutter project:
+Gerçek oyun görselleri yalnızca geliştirme sürecinde, yerel ortamda (local)
+kullanılmaktadır ve `.gitignore` aracılığıyla versiyon kontrolü dışında
+tutulmuştur.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Bu proje tamamen eğitim ve portföy (CV) amacıyla geliştirilmiştir.
+Herhangi bir ticari amaç gütmemekte olup, uygulamanın dağıtımı yapılmamaktadır.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Bu repository telifli medya barındırmaz veya dağıtmaz.
+Oyun isimleri, markalar ve görseller ilgili hak sahiplerine aittir.
+
+-------------------------------------------------------------------
+
+#En English Version
+
+## Copyright and Images
+
+This GitHub repository does not include any copyrighted game images.
+
+Real game images are used locally for development purposes only and are
+explicitly excluded from version control using `.gitignore`.
+
+This project is developed solely for educational and portfolio (CV) purposes.
+It does not have any commercial intent, and the application is not distributed.
+
+This repository does not host or distribute copyrighted media.
+All game names, trademarks, and images belong to their respective owners.
