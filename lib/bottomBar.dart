@@ -46,6 +46,7 @@ class _BottombarState extends State<Bottombar> {
               children: [
                 BottomBarItem(
                   icon: Iconsax.game_copy,
+                  iconText: 'Oyunlar',
                   selected: currentIndex == 0,
                   onTap: () {
                     setState(() {
@@ -55,6 +56,7 @@ class _BottombarState extends State<Bottombar> {
                 ),
                 BottomBarItem(
                   icon: Iconsax.heart_copy,
+                  iconText: 'Favoriler',
                   selected: currentIndex == 1,
                   onTap: () {
                     setState(() {
@@ -65,6 +67,7 @@ class _BottombarState extends State<Bottombar> {
                 BottomBarItem(
                   icon: Iconsax.medal_copy,
                   selected: currentIndex == 2,
+                  iconText: 'Başarılar',
                   onTap: () {
                     setState(() {
                       currentIndex = 2;
@@ -73,6 +76,7 @@ class _BottombarState extends State<Bottombar> {
                 ),
                 BottomBarItem(
                   icon: Iconsax.document_text_1_copy,
+                  iconText: 'Haberler',
                   selected: currentIndex == 3,
                   onTap: () {
                     setState(() {
@@ -91,6 +95,7 @@ class _BottombarState extends State<Bottombar> {
 
 class BottomBarItem extends StatelessWidget {
   final IconData icon;
+  final String iconText;
   final bool selected;
   final VoidCallback onTap;
   BottomBarItem({
@@ -98,17 +103,26 @@ class BottomBarItem extends StatelessWidget {
     required this.icon,
     required this.onTap,
     required this.selected,
+    required this.iconText,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-
-      child: Icon(
-        icon,
-        size: selected ? 30 : 25,
-        color: selected ? Colors.orange : Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            size: selected ? 30 : 25,
+            color: selected ? Colors.orange : Colors.white,
+          ),
+          Text(
+            iconText,
+            style: TextStyle(color: selected ? Colors.orange : Colors.white),
+          ),
+        ],
       ),
     );
   }
