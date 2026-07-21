@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -12,47 +11,96 @@ class GameScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 32, 16, 0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: SingleChildScrollView(
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
-                  Text(
-                    'Oyun Rehberi',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Oyun Rehberi',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'Keşfet ve Favorilerini bul',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color(0xff1C1C1E),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            '6 Oyun',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Oyun Ara',
+                        prefixIcon: Icon(Icons.search),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
                     ),
                   ),
-                  Text(
-                    '6 Oyun',
-                    style: TextStyle(color: Colors.white70, fontSize: 12),
+                  GameContainer(
+                    title: 'Valorant',
+                    category: 'Fps',
+                    iconColor: Colors.red,
+                  ),
+                  GameContainer(
+                    title: 'God of War',
+                    category: 'Aksiyon',
+                    iconColor: Colors.green,
+                  ),
+                  GameContainer(
+                    title: 'Clash Royale',
+                    category: 'Taktiksel',
+                    iconColor: Colors.amber,
+                  ),
+                  GameContainer(
+                    title: 'Arc Raiders',
+                    category: 'Extraction Shooter',
+                    iconColor: Colors.purple,
+                  ),
+                  GameContainer(
+                    title: 'League of Legends',
+                    category: 'MOBA',
+                    iconColor: Colors.orange,
+                  ),
+                  GameContainer(
+                    title: 'Stardew Valley',
+                    category: 'Yaşam Simülasyonu',
+                    iconColor: Colors.tealAccent,
                   ),
                 ],
               ),
-              Divider(color: Colors.white70, thickness: 2),
-              GameContainer(
-                title: 'Valorant',
-                category: 'Fps',
-                iconColor: Colors.red,
-              ),
-              GameContainer(
-                title: 'God of War',
-                category: 'Aksiyon',
-                iconColor: Colors.green,
-              ),
-              GameContainer(
-                title: 'Clash Royale',
-                category: 'Taktiksel',
-                iconColor: Colors.amber,
-              ),
-              GameContainer(
-                title: 'Arc Raiders',
-                category: 'Extraction Shooter',
-                iconColor: Colors.purple,
-              ),
-            ],
+            ),
           ),
         ),
       ),
@@ -102,12 +150,22 @@ class GameContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    category,
-                    style: TextStyle(color: iconColor, fontSize: 12),
-                  ),
-                  Text(
                     title,
                     style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  SizedBox(height: 4),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: iconColor.withOpacity(0.2),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                      child: Text(
+                        category,
+                        style: TextStyle(color: iconColor, fontSize: 12),
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -48,6 +48,7 @@ class _BottombarState extends State<Bottombar> {
                   icon: Iconsax.game_copy,
                   iconText: 'Oyunlar',
                   selected: currentIndex == 0,
+                  color: Colors.red,
                   onTap: () {
                     setState(() {
                       currentIndex = 0;
@@ -58,6 +59,7 @@ class _BottombarState extends State<Bottombar> {
                   icon: Iconsax.heart_copy,
                   iconText: 'Favoriler',
                   selected: currentIndex == 1,
+                  color: Colors.blue,
                   onTap: () {
                     setState(() {
                       currentIndex = 1;
@@ -68,6 +70,7 @@ class _BottombarState extends State<Bottombar> {
                   icon: Iconsax.medal_copy,
                   selected: currentIndex == 2,
                   iconText: 'Başarılar',
+                  color: Colors.amber,
                   onTap: () {
                     setState(() {
                       currentIndex = 2;
@@ -78,6 +81,7 @@ class _BottombarState extends State<Bottombar> {
                   icon: Iconsax.document_text_1_copy,
                   iconText: 'Haberler',
                   selected: currentIndex == 3,
+                  color: Colors.green,
                   onTap: () {
                     setState(() {
                       currentIndex = 3;
@@ -95,6 +99,7 @@ class _BottombarState extends State<Bottombar> {
 
 class BottomBarItem extends StatelessWidget {
   final IconData icon;
+  final Color color;
   final String iconText;
   final bool selected;
   final VoidCallback onTap;
@@ -104,6 +109,7 @@ class BottomBarItem extends StatelessWidget {
     required this.onTap,
     required this.selected,
     required this.iconText,
+    required this.color,
   });
 
   @override
@@ -116,11 +122,11 @@ class BottomBarItem extends StatelessWidget {
           Icon(
             icon,
             size: selected ? 30 : 25,
-            color: selected ? Colors.orange : Colors.white,
+            color: selected ? color : Colors.white,
           ),
           Text(
             iconText,
-            style: TextStyle(color: selected ? Colors.orange : Colors.white),
+            style: TextStyle(color: selected ? color : Colors.white),
           ),
         ],
       ),
